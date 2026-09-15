@@ -10,10 +10,11 @@
 </head>
 <body>
     <div class="container">
+        <!-- Barra Lateral -->
         <aside class="sidebar">
             <div class="profile-img-container">
-                <!-- SUGERENCIA: Reemplaza esta URL con el enlace de tu foto real o sube tu foto al repositorio como 'profile.jpg' y cambia el src a src="profile.jpg" -->
-                <src="profile.jpg" alt="Juan Pablo Gutiérrez Quintero" class="profile-img">
+                <!-- Reemplaza src con el nombre de tu archivo de foto, ej: profile.jpg -->
+                <img src="https://via.placeholder.com/200x200.png?text=JP" alt="Juan Pablo Gutiérrez Quintero" class="profile-img">
             </div>
             <div class="contact-info">
                 <h2>Contacto</h2>
@@ -21,18 +22,25 @@
                     <li><i class="fas fa-map-marker-alt"></i> Medellín, Colombia</li>
                     <li><i class="fas fa-envelope"></i> <a href="mailto:jpgutierrq@eafit.edu.co">jpgutierrq@eafit.edu.co</a></li>
                     <li><i class="fas fa-phone"></i> +57 3005431546</li>
+                    <!-- Puedes actualizar los '#' con los links a tus perfiles -->
+                    <li><i class="fab fa-github"></i> <a href="#" target="_blank">GitHub</a></li>
+                    <li><i class="fab fa-bandcamp"></i> <a href="#" target="_blank">s0lid142</a></li>
                 </ul>
             </div>
             
             <div class="skills">
                 <h2>Habilidades</h2>
                 <div class="skill-category">
-                    <h3>Técnicas</h3>
-                    <p>Python, JavaScript (p5.js), C# (Unity), Arduino/IoT, HTML/CSS.</p>
+                    <h3>Desarrollo & Web</h3>
+                    <p>Python (FastAPI, Streamlit), JavaScript (p5.js, Web Audio API), HTML/CSS, Google Tag Manager.</p>
                 </div>
                 <div class="skill-category">
-                    <h3>Diseño</h3>
-                    <p>Modelado 3D Orgánico (Maya/Blender), Diseño Sonoro (Ableton Live).</p>
+                    <h3>XR & Hardware</h3>
+                    <p>C# (Unity, XR Interaction Toolkit), Arduino, IoT, Hardware Modding.</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Diseño & Audio</h3>
+                    <p>Modelado 3D (Maya/Blender), Diseño Sonoro (Ableton Live).</p>
                 </div>
                 <div class="skill-category">
                     <h3>Blandas</h3>
@@ -44,7 +52,7 @@
                 <h2>Educación</h2>
                 <div class="edu-item">
                     <h3>Diseño Interactivo</h3>
-                    <p>EAFIT | 2022 - Presente</p>
+                    <p>Universidad EAFIT | 2022 - Presente</p>
                 </div>
                 <div class="edu-item">
                     <h3>Bachillerato</h3>
@@ -53,6 +61,7 @@
             </div>
         </aside>
 
+        <!-- Contenido Principal -->
         <main class="main-content">
             <header>
                 <h1>Juan Pablo Gutiérrez Quintero</h1>
@@ -61,12 +70,48 @@
 
             <section class="summary">
                 <h2>Resumen</h2>
-                <p>Como estudiante de Diseño Interactivo en EAFIT, me apasionan las historias bien hechas y descubrir el proceso detrás de cada proyecto creativo. Mi enfoque transdisciplinar me permite ver el mundo como una constante oportunidad de diseño. Cuento con experiencia práctica en la creación de universos narrativos -como en el semillero Cosmogénesis- y en el desarrollo de productos digitales que van desde videojuegos o apps en Unity, hasta animaciones 2D o 3D, y diseño sonoro utilizando Ableton Live. Integro habilidades técnicas en programación y modelado 3D con un fuerte pensamiento lógico e investigación de usuarios, buscando siempre cerrar la brecha entre la viabilidad técnica y la experiencia humana.</p>
+                <p>Como estudiante de Diseño Interactivo en EAFIT, me apasionan las historias bien hechas y descubrir el proceso detrás de cada proyecto creativo[cite: 1]. Mi enfoque transdisciplinar me permite ver el mundo como una constante oportunidad de diseño[cite: 1]. Cuento con experiencia práctica en la creación de universos narrativos, y en el desarrollo de productos digitales que van desde experiencias inmersivas en Unity, hasta hardware modding, desarrollo web frontend/backend y diseño sonoro avanzado. Integro habilidades técnicas en programación y modelado 3D con un fuerte pensamiento lógico e investigación de usuarios, buscando siempre cerrar la brecha entre la viabilidad técnica y la experiencia humana[cite: 1].</p>
             </section>
 
             <section class="experience">
-                <h2>Experiencia y Proyectos</h2>
+                <h2>Experiencia y Proyectos Destacados</h2>
                 
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3>Desarrollo XR y Aplicaciones Web</h3>
+                        <span class="date">2026</span>
+                    </div>
+                    <h4>Proyectos Interactivos EAFIT & Personales</h4>
+                    <ul>
+                        <li><strong>Realidad Virtual (Unity):</strong> Configuración de interacciones, sistemas de locomoción y mecánicas de físicas de objetos en entornos VR utilizando C# y el XR Interaction Toolkit.</li>
+                        <li><strong>Desarrollo Web & Analítica:</strong> Creación de aplicaciones web, como un sampler de audio basado en Web Audio API y plataformas MVP de delivery. Despliegue en Render y GitHub Pages, integrando seguimiento de eventos con Google Tag Manager.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3>Producción Musical y Diseño Sonoro</h3>
+                        <span class="date">2016 - Presente</span>
+                    </div>
+                    <h4>Proyecto Independiente: s0lid142</h4>
+                    <ul>
+                        <li>Producción musical independiente, explorando géneros como alternative hip-hop, boom bap y trap bajo el sello Tres Tristes Tigres.</li>
+                        <li>Diseño sonoro y producción estructurada en Ableton Live, gestionando lanzamientos como "Dusk", "Golden Coast" y "SuperZ" en plataformas como Bandcamp y YouTube.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3>Hardware Modding & IoT</h3>
+                        <span class="date">2026</span>
+                    </div>
+                    <h4>Exploración Tecnológica</h4>
+                    <ul>
+                        <li><strong>Modding de Dispositivos:</strong> Intervención de módulos Casio F-91W utilizando placas Olliewatch. Diseño e impresión 3D de soportes internos para las placas.</li>
+                        <li><strong>Electrónica Automotriz:</strong> Modificaciones y mantenimiento de vehículos, incluyendo la conversión y cableado de tableros de instrumentos a clústers digitales universales.</li>
+                    </ul>
+                </div>
+
                 <div class="exp-item">
                     <div class="exp-header">
                         <h3>Narrativa Especulativa: Distrito Sur 2030</h3>
@@ -74,9 +119,9 @@
                     </div>
                     <h4>Semillero Cosmogénesis (RedColsi)</h4>
                     <ul>
-                        <li>Liderazgo del componente narrativo en el proyecto "Ciudades Posibles", diseñando el world-building de la Medellín del futuro.</li>
-                        <li>Desarrollo de narrativas para visualizar la integración urbana entre las comunas 14 y 15.</li>
-                        <li>Ponente en el Encuentro Departamental RedColsi, validando la propuesta ante expertos en investigación y urbanismo.</li>
+                        <li>Liderazgo del componente narrativo en el proyecto "Ciudades Posibles", diseñando el world-building de la Medellín del futuro[cite: 1].</li>
+                        <li>Desarrollo de narrativas para visualizar la integración urbana entre las comunas 14 y 15[cite: 1].</li>
+                        <li>Ponente en el Encuentro Departamental RedColsi, validando la propuesta ante expertos en investigación y urbanismo[cite: 1].</li>
                     </ul>
                 </div>
 
@@ -87,8 +132,8 @@
                     </div>
                     <h4>Retos Medialab</h4>
                     <ul>
-                        <li><strong>Videojuegos (Bombillo Amarillo):</strong> Desarrollo de la demo de un videojuego móvil, expandiendo el universo narrativo de "Balloon and Ben" mediante mecánicas interactivas.</li>
-                        <li><strong>Cocreación Social:</strong> Diseño y facilitación de una hackathon de ideación para estudiantes de media técnica, traduciendo conceptos complejos de diseño a dinámicas de aprendizaje práctico.</li>
+                        <li><strong>Videojuegos (Bombillo Amarillo):</strong> Desarrollo de la demo de un videojuego móvil, expandiendo el universo narrativo de "Balloon and Ben" mediante mecánicas interactivas[cite: 1].</li>
+                        <li><strong>Cocreación Social:</strong> Diseño y facilitación de una hackathon de ideación para estudiantes de media técnica, traduciendo conceptos complejos de diseño a dinámicas de aprendizaje práctico[cite: 1].</li>
                     </ul>
                 </div>
             </section>
