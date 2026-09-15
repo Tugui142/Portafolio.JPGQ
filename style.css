@@ -1,0 +1,419 @@
+:root {
+    --bg: #101b2d;
+    --bg-deep: #0a1220;
+    --surface: #16233a;
+    --surface-raised: #1b2c47;
+    --ink: #edeff3;
+    --ink-soft: #9fb0c7;
+    --ink-faint: #6c7f9c;
+    --accent: #e8a33d;
+    --accent-cool: #5fb8d9;
+    --rule: rgba(237, 239, 243, 0.14);
+    --rule-strong: rgba(237, 239, 243, 0.28);
+    --radius: 3px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Literata', Georgia, serif;
+    background-color: var(--bg);
+    background-image:
+        linear-gradient(var(--rule) 1px, transparent 1px),
+        linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-attachment: fixed;
+    color: var(--ink);
+    line-height: 1.65;
+}
+
+h1, h2, h3, h4, .nav a, .tag, .btn-link {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+a {
+    color: var(--accent-cool);
+}
+
+/* Site nav (shared) */
+.site-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 24px 0;
+}
+
+.site-nav .wordmark {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+}
+
+.site-nav .links {
+    display: flex;
+    gap: 28px;
+}
+
+.site-nav .links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.92rem;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.site-nav .links a:hover {
+    color: var(--ink);
+    border-color: var(--accent-cool);
+}
+
+/* Layout */
+.container {
+    display: flex;
+    max-width: 1100px;
+    margin: 24px auto 60px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 33%;
+    background-color: var(--bg-deep);
+    color: var(--ink);
+    padding: 44px 32px;
+    border-right: 1px solid var(--rule);
+}
+
+.profile-img-container {
+    margin-bottom: 32px;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-cool);
+}
+
+.sidebar h2 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule-strong);
+    color: var(--accent-cool);
+}
+
+.contact-info ul {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.contact-info li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.92rem;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--ink-soft);
+}
+
+.contact-info a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-info a:hover {
+    color: var(--accent-cool);
+}
+
+.skill-category, .edu-item {
+    margin-bottom: 20px;
+}
+
+.skill-category h3, .edu-item h3 {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--ink);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.skill-category p {
+    font-size: 0.88rem;
+    color: var(--ink-faint);
+    margin-top: 4px;
+}
+
+.edu-item p {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+    margin-top: 2px;
+}
+
+.main-content {
+    width: 67%;
+    padding: 48px 44px;
+}
+
+header.page-header {
+    margin-bottom: 12px;
+}
+
+header.page-header h1 {
+    font-size: 2.3rem;
+    line-height: 1.15;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+}
+
+header.page-header h2 {
+    font-size: 1.1rem;
+    color: var(--accent-cool);
+    font-weight: 400;
+}
+
+.coordinates {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+    margin-top: 10px;
+}
+
+section {
+    margin-bottom: 44px;
+}
+
+section > h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+}
+
+.summary p {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    max-width: 68ch;
+}
+
+/* Projects grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.project-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-card:hover {
+    border-color: var(--accent-cool);
+    transform: translateY(-2px);
+}
+
+.project-card .tag {
+    font-size: 0.78rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.project-card h3 {
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.project-card p {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    flex-grow: 1;
+    margin-bottom: 16px;
+}
+
+.project-card .btn-link {
+    font-size: 0.88rem;
+    color: var(--accent-cool);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-cool);
+    align-self: flex-start;
+    padding-bottom: 2px;
+}
+
+.project-card.no-link .btn-link {
+    display: none;
+}
+
+/* Footer / CTA */
+footer.contact-cta {
+    border-top: 1px solid var(--rule);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+footer.contact-cta p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+}
+
+footer.contact-cta a.btn-link {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+    font-size: 0.92rem;
+}
+
+/* Project detail pages */
+.case-study {
+    max-width: 760px;
+    margin: 8px auto 80px;
+    padding: 0 24px;
+}
+
+.case-study .back-link {
+    display: inline-block;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.88rem;
+    margin-bottom: 28px;
+    border-bottom: 1px solid transparent;
+}
+
+.case-study .back-link:hover {
+    color: var(--accent-cool);
+    border-color: var(--accent-cool);
+}
+
+.case-study header {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+}
+
+.case-study header h1 {
+    font-size: 2.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.case-study .meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+}
+
+.case-study .meta .date-tag {
+    color: var(--accent);
+    background: rgba(232, 163, 61, 0.1);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.case-study .image-placeholder {
+    border: 1px dashed var(--rule-strong);
+    border-radius: var(--radius);
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--ink-faint);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    margin: 28px 0;
+}
+
+.case-study section {
+    margin-bottom: 36px;
+}
+
+.case-study h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--accent-cool);
+    margin-bottom: 14px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.case-study p {
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+    max-width: 68ch;
+}
+
+.case-study ul {
+    padding-left: 20px;
+    margin-bottom: 14px;
+}
+
+.case-study li {
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .site-nav {
+        padding: 20px 20px 0;
+    }
+
+    .container {
+        flex-direction: column;
+        margin: 16px 0 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 30px 20px;
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 32px 20px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer.contact-cta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Pablo Gutiérrez - Portafolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,18..144,400;0,18..144,500;1,18..144,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="index.html" class="wordmark">Juan Pablo Gutiérrez Quintero</a>
+        <div class="links">
+            <a href="index.html#proyectos">Proyectos</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Barra Lateral -->
+        <aside class="sidebar">
+            <div class="profile-img-container">
+                <!-- Asegúrate de subir tu foto como 'profile.jpg' al repositorio -->
+                <img src="profile.jpg" alt="Juan Pablo Gutiérrez Quintero" class="profile-img">
+            </div>
+            <div class="contact-info" id="contacto">
+                <h2>Contacto</h2>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Medellín, Colombia</li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:jpgutierrq@eafit.edu.co">jpgutierrq@eafit.edu.co</a></li>
+                    <li><i class="fas fa-phone"></i> +57 3005431546</li>
+                </ul>
+            </div>
+
+            <div class="skills">
+                <h2>Habilidades</h2>
+                <div class="skill-category">
+                    <h3>Técnicas</h3>
+                    <p>Python, JavaScript (p5.js), C# (Unity), Arduino/IoT, HTML/CSS.</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Diseño</h3>
+                    <p>Modelado 3D orgánico (Maya/Blender), diseño sonoro en Ableton Live.</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Blandas</h3>
+                    <p>Storytelling, pensamiento lógico, investigación de usuarios.</p>
+                </div>
+            </div>
+
+            <div class="education">
+                <h2>Educación</h2>
+                <div class="edu-item">
+                    <h3>Diseño Interactivo</h3>
+                    <p>EAFIT | 2022 - Presente</p>
+                </div>
+                <div class="edu-item">
+                    <h3>Bachillerato</h3>
+                    <p>Politécnico Integral Colombiano | 2018 - 2019</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Juan Pablo Gutiérrez Quintero</h1>
+                <h2>Estudiante de diseño interactivo</h2>
+                <p class="coordinates">Medellín, Colombia — 6.2442° N, 75.5812° O</p>
+            </header>
+
+            <section class="summary">
+                <h2>Resumen</h2>
+                <p>Como estudiante de Diseño Interactivo en EAFIT, me apasionan las historias bien hechas y descubrir el proceso detrás de cada proyecto creativo. Mi enfoque transdisciplinar me permite ver el mundo como una constante oportunidad de diseño. Tengo experiencia práctica creando universos narrativos —como en el semillero Cosmogénesis— y desarrollando productos digitales que van desde videojuegos y apps en Unity hasta animaciones 2D o 3D y diseño sonoro en Ableton Live. Integro programación y modelado 3D con pensamiento lógico e investigación de usuarios, buscando siempre cerrar la brecha entre la viabilidad técnica y la experiencia humana.</p>
+            </section>
+
+            <section class="projects" id="proyectos">
+                <h2>Proyectos</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <span class="tag">Semillero Cosmogénesis · RedColsi — 2025</span>
+                        <h3>Distrito Sur 2030</h3>
+                        <p>World-building especulativo sobre la Medellín del futuro: liderazgo narrativo del proyecto "Ciudades Posibles", integrando las comunas 14 y 15.</p>
+                        <a href="proyecto-distrito-sur.html" class="btn-link">Ver caso de estudio</a>
+                    </article>
+
+                    <article class="project-card">
+                        <span class="tag">Retos Medialab — 2022-2025</span>
+                        <h3>Bombillo Amarillo</h3>
+                        <p>Demo de videojuego móvil que expande el universo narrativo de "Balloon and Ben" con nuevas mecánicas interactivas.</p>
+                        <a href="proyecto-bombillo-amarillo.html" class="btn-link">Ver caso de estudio</a>
+                    </article>
+
+                    <article class="project-card">
+                        <span class="tag">Retos Medialab — 2022-2025</span>
+                        <h3>Cocreación Social</h3>
+                        <p>Diseño y facilitación de una hackathon de ideación para estudiantes de media técnica, traduciendo conceptos de diseño a dinámicas de aprendizaje.</p>
+                        <a href="proyecto-cocreacion-social.html" class="btn-link">Ver caso de estudio</a>
+                    </article>
+                </div>
+            </section>
+
+            <footer class="contact-cta">
+                <p>¿Buscas a alguien para tu próximo proyecto de diseño interactivo?</p>
+                <a href="mailto:jpgutierrq@eafit.edu.co" class="btn-link">Escríbeme</a>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
