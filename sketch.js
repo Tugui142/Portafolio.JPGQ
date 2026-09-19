@@ -1,9 +1,14 @@
-// PALETA
 let colores = ["#6366F1", "#EC4899", "#818CF8", "#F472B6", "#F8FAFC"];
 let circulos;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  let canvas = createCanvas(windowWidth, windowHeight);
+  
+  // Esto "clava" la animación al fondo de toda la pantalla
+  canvas.position(0, 0);
+  canvas.style('position', 'fixed');
+  canvas.style('z-index', '-1');
+  canvas.style('pointer-events', 'none');
 
   circulos = [];
   for (let i = 0; i < 40; i++) {
@@ -14,32 +19,26 @@ function setup() {
 }
 
 function draw() {
-  // Fondo de color Azabache Profundo para que las partículas resalten
   background('#0F172A'); 
-  circulos.forEach(operarCirculos);
+  circulos.forEach(c => {
+    c.dibujar();
+    c.mover();
+  });
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-function operarCirculos(circulo) {
-  circulo.dibujar();
-  circulo.mover();
-}
-
 class Circulo {
   constructor() {
     this.x = random(width);
     this.y = random(height);
-    this.vx = random(-1.5, 1.5); 
-    this.vy = random(-1.5, 1.5);
+    this.vx = random(-1.5, 1.5) || 1; 
+    this.vy = random(-1.5, 1.5) || 1;
     this.c = random(colores);
     this.s = random(15, 35);
     this.t = random(0, TWO_PI);
-    
-    if (this.vx === 0) this.vx = 1;
-    if (this.vy === 0) this.vy = 1;
   }
   
   dibujar() {
@@ -54,7 +53,6 @@ class Circulo {
   mover() {
     this.x += this.vx;
     this.y += this.vy;
-    
     if (this.x > width) this.x = 0;
     if (this.x < 0) this.x = width;
     if (this.y > height) this.y = 0;
