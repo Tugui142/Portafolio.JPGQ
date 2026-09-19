@@ -24,7 +24,7 @@
 
 body {
     font-family: 'Literata', Georgia, serif;
-    background-color: var(--bg-solid); /* Evita el fondo blanco en móviles */
+    background-color: var(--bg-solid);
     color: var(--ink);
     line-height: 1.65;
     overflow-x: hidden;
@@ -272,6 +272,8 @@ footer.contact-cta {
     align-items: center;
     flex-wrap: wrap;
     gap: 16px;
+    position: relative;
+    z-index: 10;
 }
 
 footer.contact-cta p {
@@ -352,13 +354,28 @@ footer.contact-cta a.btn-link:hover {
     padding-left: 24px;
 }
 
+/* 
+ * FIX DEFINITIVO PARA EL FONDO ANIMADO DE P5.JS 
+ * Obliga al canvas a comportarse como un fondo de pantalla (wallpaper)
+ * fijo que cubre todo el dispositivo sin cortarse al hacer scroll.
+ */
+canvas {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
 /* Responsive para Móviles */
 @media (max-width: 768px) {
     .site-nav {
         padding: 20px;
         flex-direction: column;
         gap: 16px;
-        background-color: var(--bg-solid); /* Fuerza fondo oscuro en móvil para el nav */
+        background-color: var(--bg-solid);
     }
 
     .container {
