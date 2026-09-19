@@ -1,16 +1,9 @@
-// Colores basados en la paleta "Creative Studio"
+// PALETA
 let colores = ["#6366F1", "#EC4899", "#818CF8", "#F472B6", "#F8FAFC"];
 let circulos;
 
 function setup() {
-  let canvas = createCanvas(windowWidth, windowHeight);
-  
-  // Solución al problema de desfase en móviles
-  canvas.position(0, 0); 
-  canvas.style('top', '0');
-  canvas.style('left', '0');
-  canvas.style('z-index', '-1');
-  canvas.style('position', 'fixed');
+  createCanvas(windowWidth, windowHeight);
 
   circulos = [];
   for (let i = 0; i < 40; i++) {
@@ -21,7 +14,7 @@ function setup() {
 }
 
 function draw() {
-  // Fondo sólido Azabache Profundo para proteger la legibilidad siempre
+  // Fondo de color Azabache Profundo para que las partículas resalten
   background('#0F172A'); 
   circulos.forEach(operarCirculos);
 }
@@ -54,7 +47,6 @@ class Circulo {
     fill(this.c);
     drawingContext.shadowBlur = 30;
     drawingContext.shadowColor = this.c;
-    // Efecto de pulso suave
     circle(this.x, this.y, this.s * Math.abs(sin(this.t))); 
     this.t += 0.03;
   }
