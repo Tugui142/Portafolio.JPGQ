@@ -1,32 +1,31 @@
-let colores = ["red", "rgb(100,227,100)", "yellow", "rgb(229,94,229)", "rgb(255,209,0)", "blue"];
+// Colores basados en la paleta "Creative Studio"
+let colores = ["#6366F1", "#EC4899", "#818CF8", "#F472B6", "#F8FAFC"];
 let circulos;
 
 function setup() {
-  // Ajustar al tamaño completo de la ventana
   let canvas = createCanvas(windowWidth, windowHeight);
   
-  // Posicionar el canvas al fondo y fijo
-  canvas.position(0, 0);
+  // Solución al problema de desfase en móviles
+  canvas.position(0, 0); 
+  canvas.style('top', '0');
+  canvas.style('left', '0');
   canvas.style('z-index', '-1');
   canvas.style('position', 'fixed');
 
   circulos = [];
-  for (let i = 0; i < 42; i++) {
-    let c = new Circulo();
-    circulos.push(c);
+  for (let i = 0; i < 40; i++) {
+    circulos.push(new Circulo());
   }
   
-  // 60 es el estándar web para fluidez sin saturar el procesador
   frameRate(60); 
 }
 
 function draw() {
-  // Fondo oscuro para que resalte el neón (puedes ajustarlo al color de tu web)
-  background(10, 10, 12); 
+  // Fondo sólido Azabache Profundo para proteger la legibilidad siempre
+  background('#0F172A'); 
   circulos.forEach(operarCirculos);
 }
 
-// Hace que el fondo se ajuste si el usuario cambia el tamaño de la ventana
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
@@ -40,25 +39,24 @@ class Circulo {
   constructor() {
     this.x = random(width);
     this.y = random(height);
-    // Reduje un poco la velocidad (-2 a 2) para que sea un fondo sutil y no maree
-    this.vx = random(-2, 2); 
-    this.vy = random(-2, 2);
+    this.vx = random(-1.5, 1.5); 
+    this.vy = random(-1.5, 1.5);
     this.c = random(colores);
-    this.s = 25;
-    this.t = random(0, 1);
+    this.s = random(15, 35);
+    this.t = random(0, TWO_PI);
     
-    if (this.vx == 0) this.vx = 1;
-    if (this.vy == 0) this.vy = 1;
+    if (this.vx === 0) this.vx = 1;
+    if (this.vy === 0) this.vy = 1;
   }
   
   dibujar() {
     noStroke();
     fill(this.c);
-    drawingContext.shadowBlur = 43;
+    drawingContext.shadowBlur = 30;
     drawingContext.shadowColor = this.c;
-    // Pulso del tamaño con el seno
-    circle(this.x, this.y, this.s * Math.abs(sin(this.t * 1.1))); 
-    this.t += 0.05;
+    // Efecto de pulso suave
+    circle(this.x, this.y, this.s * Math.abs(sin(this.t))); 
+    this.t += 0.03;
   }
   
   mover() {
