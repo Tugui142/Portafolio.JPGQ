@@ -1,18 +1,13 @@
 :root {
-    /* Paleta Creative Studio */
-    --bg-solid: #0F172A; /* Azabache Profundo */
-    --bg-glass: rgba(15, 23, 42, 0.7); /* Fondo cristalino para los contenedores */
-    --surface: rgba(30, 41, 59, 0.65); /* Contraste sutil para tarjetas */
+    --bg-glass: rgba(15, 23, 42, 0.7);
+    --surface: rgba(30, 41, 59, 0.65);
     --surface-hover: rgba(51, 65, 85, 0.8);
-    
-    --ink: #F8FAFC; /* Blanco Nieve para textos principales */
-    --ink-soft: #CBD5E1; /* Gris claro para textos secundarios */
+    --ink: #F8FAFC;
+    --ink-soft: #CBD5E1;
     --ink-faint: #94A3B8; 
-    
-    --accent: #6366F1; /* Plindigo / Violeta Eléctrico */
-    --accent-hover: #EC4899; /* Rosa Vibrante */
-    
-    --rule: rgba(248, 250, 252, 0.1); /* Líneas divisorias sutiles */
+    --accent: #6366F1;
+    --accent-hover: #EC4899;
+    --rule: rgba(248, 250, 252, 0.1);
     --radius: 12px;
 }
 
@@ -24,7 +19,7 @@
 
 body {
     font-family: 'Literata', Georgia, serif;
-    background-color: var(--bg-solid);
+    background-color: transparent !important; /* Vital para que se vean las bolas en toda la página */
     color: var(--ink);
     line-height: 1.65;
     overflow-x: hidden;
@@ -43,7 +38,6 @@ a:hover {
     color: var(--accent-hover);
 }
 
-/* Navegación */
 .site-nav {
     display: flex;
     justify-content: space-between;
@@ -51,8 +45,6 @@ a:hover {
     max-width: 1100px;
     margin: 0 auto;
     padding: 24px 24px 10px;
-    position: relative;
-    z-index: 10;
 }
 
 .site-nav .wordmark {
@@ -79,7 +71,6 @@ a:hover {
     color: var(--accent);
 }
 
-/* Contenedor Principal con efecto Glassmorphism */
 .container {
     display: flex;
     max-width: 1100px;
@@ -90,12 +81,9 @@ a:hover {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     overflow: hidden;
-    position: relative;
-    z-index: 10;
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* Barra Lateral */
 .sidebar {
     width: 33%;
     background-color: rgba(15, 23, 42, 0.4);
@@ -114,7 +102,6 @@ a:hover {
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--accent);
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
 }
 
 .sidebar h2 {
@@ -149,10 +136,6 @@ a:hover {
     text-decoration: none;
 }
 
-.contact-info a:hover {
-    color: var(--accent-hover);
-}
-
 .skill-category h3, .edu-item h3 {
     font-size: 1rem;
     color: var(--ink);
@@ -164,7 +147,6 @@ a:hover {
     color: var(--ink-soft);
 }
 
-/* Contenido Central */
 .main-content {
     width: 67%;
     padding: 48px 40px;
@@ -203,7 +185,6 @@ section > h2 {
     color: var(--ink-soft);
 }
 
-/* Tarjetas de Proyectos */
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -224,7 +205,6 @@ section > h2 {
     transform: translateY(-5px);
     border-color: var(--accent-hover);
     background: var(--surface-hover);
-    box-shadow: 0 10px 30px rgba(236, 72, 153, 0.15);
 }
 
 .project-card .tag {
@@ -257,12 +237,6 @@ section > h2 {
     padding-bottom: 2px;
 }
 
-.project-card .btn-link:hover {
-    color: var(--accent-hover);
-    border-color: var(--accent-hover);
-}
-
-/* Footer CTA */
 footer.contact-cta {
     border-top: 1px solid var(--rule);
     margin-top: 50px;
@@ -272,8 +246,6 @@ footer.contact-cta {
     align-items: center;
     flex-wrap: wrap;
     gap: 16px;
-    position: relative;
-    z-index: 10;
 }
 
 footer.contact-cta p {
@@ -289,12 +261,6 @@ footer.contact-cta a.btn-link {
     padding-bottom: 2px;
 }
 
-footer.contact-cta a.btn-link:hover {
-    color: var(--accent-hover);
-    border-color: var(--accent-hover);
-}
-
-/* Páginas de Casos de Estudio */
 .case-study {
     max-width: 800px;
     margin: 20px auto 80px;
@@ -304,8 +270,6 @@ footer.contact-cta a.btn-link:hover {
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--rule);
     border-radius: var(--radius);
-    position: relative;
-    z-index: 10;
 }
 
 .case-study .back-link {
@@ -315,10 +279,6 @@ footer.contact-cta a.btn-link:hover {
     font-size: 0.9rem;
     display: inline-block;
     margin-bottom: 30px;
-}
-
-.case-study .back-link:hover {
-    color: var(--accent);
 }
 
 .case-study header h1 {
@@ -354,28 +314,11 @@ footer.contact-cta a.btn-link:hover {
     padding-left: 24px;
 }
 
-/* 
- * FIX DEFINITIVO PARA EL FONDO ANIMADO DE P5.JS 
- * Obliga al canvas a comportarse como un fondo de pantalla (wallpaper)
- * fijo que cubre todo el dispositivo sin cortarse al hacer scroll.
- */
-canvas {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    z-index: 1 !important;
-    pointer-events: none !important;
-}
-
-/* Responsive para Móviles */
 @media (max-width: 768px) {
     .site-nav {
         padding: 20px;
         flex-direction: column;
         gap: 16px;
-        background-color: var(--bg-solid);
     }
 
     .container {
@@ -399,11 +342,6 @@ canvas {
 
     .projects-grid {
         grid-template-columns: 1fr;
-    }
-
-    footer.contact-cta {
-        flex-direction: column;
-        align-items: flex-start;
     }
     
     .case-study {
