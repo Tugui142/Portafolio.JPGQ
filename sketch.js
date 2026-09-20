@@ -2,12 +2,12 @@ let colores = ["#6366F1", "#EC4899", "#818CF8", "#F472B6", "#F8FAFC"];
 let circulos;
 
 function setup() {
+  // Inicializa el canvas asegurando que tome toda la ventana
   let canvas = createCanvas(windowWidth, windowHeight);
   
-  // Esto "clava" la animación al fondo de toda la pantalla
-  canvas.position(0, 0);
-  canvas.style('position', 'fixed');
-  canvas.style('z-index', '-1');
+  // Refuerza las propiedades CSS desde JavaScript por seguridad
+  canvas.position(0, 0, 'fixed');
+  canvas.style('z-index', '1');
   canvas.style('pointer-events', 'none');
 
   circulos = [];
@@ -19,7 +19,9 @@ function setup() {
 }
 
 function draw() {
+  // Fondo Azabache Profundo
   background('#0F172A'); 
+  
   circulos.forEach(c => {
     c.dibujar();
     c.mover();
@@ -53,6 +55,7 @@ class Circulo {
   mover() {
     this.x += this.vx;
     this.y += this.vy;
+    
     if (this.x > width) this.x = 0;
     if (this.x < 0) this.x = width;
     if (this.y > height) this.y = 0;
