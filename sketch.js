@@ -4,16 +4,13 @@ let circulos;
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
   
-  // FIX DEFINITIVO: Saca el canvas del <main> y lo ancla al body absoluto
-  document.body.appendChild(canvas.elt);
+  // FIX DEFINITIVO: Sacamos el canvas del contenedor para que el "blur" no lo atrape
+  canvas.parent(document.body);
 
-  canvas.elt.style.position = 'fixed';
-  canvas.elt.style.top = '0';
-  canvas.elt.style.left = '0';
-  canvas.elt.style.width = '100vw';
-  canvas.elt.style.height = '100vh';
-  canvas.elt.style.zIndex = '-1'; 
-  canvas.elt.style.pointerEvents = 'none';
+  // Lo fijamos al fondo de la pantalla
+  canvas.position(0, 0, 'fixed');
+  canvas.style('z-index', '0'); // Se queda en el fondo
+  canvas.style('pointer-events', 'none'); // No estorba a los clics
 
   circulos = [];
   for (let i = 0; i < 40; i++) {
@@ -24,7 +21,7 @@ function setup() {
 }
 
 function draw() {
-  // El fondo se pinta transparente para heredar el de CSS, o puedes dejar el oscuro
+  // Pintamos el fondo oscuro
   background('#0F172A'); 
   circulos.forEach(c => {
     c.dibujar();
