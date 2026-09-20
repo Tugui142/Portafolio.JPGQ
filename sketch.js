@@ -2,26 +2,16 @@ let colores = ["#6366F1", "#EC4899", "#818CF8", "#F472B6", "#F8FAFC"];
 let circulos;
 
 function setup() {
-  // Inicializa el canvas asegurando que tome toda la ventana
-  let canvas = createCanvas(windowWidth, windowHeight);
-  
-  // Refuerza las propiedades CSS desde JavaScript por seguridad
-  canvas.position(0, 0, 'fixed');
-  canvas.style('z-index', '1');
-  canvas.style('pointer-events', 'none');
-
+  createCanvas(windowWidth, windowHeight);
   circulos = [];
   for (let i = 0; i < 40; i++) {
     circulos.push(new Circulo());
   }
-  
   frameRate(60); 
 }
 
 function draw() {
-  // Fondo Azabache Profundo
   background('#0F172A'); 
-  
   circulos.forEach(c => {
     c.dibujar();
     c.mover();
