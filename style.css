@@ -18,27 +18,15 @@
     box-sizing: border-box;
 }
 
-html {
-    background-color: var(--bg-solid); /* Color base de seguridad */
+html, body {
+    background-color: var(--bg-solid) !important; /* Base oscura siempre */
 }
 
 body {
     font-family: 'Literata', Georgia, serif;
-    background-color: transparent !important; /* Vital para ver la animación de fondo */
     color: var(--ink);
     line-height: 1.65;
     overflow-x: hidden;
-}
-
-/* FIX: Clava la animación en el FONDO (-1) */
-canvas {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    z-index: -1 !important; /* Esto soluciona que tapara la pantalla */
-    pointer-events: none !important;
 }
 
 h1, h2, h3, h4, .nav a, .tag, .btn-link {
