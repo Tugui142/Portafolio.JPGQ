@@ -4,18 +4,16 @@ let circulos;
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
   
-  // OPCIÓN NUCLEAR: Forzamos el CSS directamente desde JS para evadir el caché
+  // FIX DEFINITIVO: Saca el canvas del <main> y lo ancla al body absoluto
+  document.body.appendChild(canvas.elt);
+
   canvas.elt.style.position = 'fixed';
   canvas.elt.style.top = '0';
   canvas.elt.style.left = '0';
   canvas.elt.style.width = '100vw';
   canvas.elt.style.height = '100vh';
-  canvas.elt.style.zIndex = '-9999'; // Lo enviamos al fondo absoluto
-  canvas.elt.style.pointerEvents = 'none'; // Evita que bloquee los clics
-  
-  // Forzamos la transparencia del fondo de la página web
-  document.body.style.backgroundColor = "transparent";
-  document.documentElement.style.backgroundColor = "transparent";
+  canvas.elt.style.zIndex = '-1'; 
+  canvas.elt.style.pointerEvents = 'none';
 
   circulos = [];
   for (let i = 0; i < 40; i++) {
@@ -26,7 +24,7 @@ function setup() {
 }
 
 function draw() {
-  // El color Azabache Profundo se pinta aquí, en el canvas del fondo
+  // El fondo se pinta transparente para heredar el de CSS, o puedes dejar el oscuro
   background('#0F172A'); 
   circulos.forEach(c => {
     c.dibujar();
