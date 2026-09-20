@@ -1,17 +1,13 @@
 :root {
-    /* Paleta Creative Studio */
-    --bg-solid: #0F172A; /* Azabache Profundo */
-    --bg-glass: rgba(15, 23, 42, 0.7);
-    --surface: rgba(30, 41, 59, 0.65);
+    --bg-solid: #0F172A; 
+    --bg-glass: rgba(15, 23, 42, 0.7); 
+    --surface: rgba(30, 41, 59, 0.65); 
     --surface-hover: rgba(51, 65, 85, 0.8);
-    
     --ink: #F8FAFC; 
     --ink-soft: #CBD5E1; 
     --ink-faint: #94A3B8; 
-    
     --accent: #6366F1; 
     --accent-hover: #EC4899; 
-    
     --rule: rgba(248, 250, 252, 0.1); 
     --radius: 12px;
 }
@@ -22,22 +18,26 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: var(--bg-solid); /* Color base de seguridad */
+}
+
 body {
     font-family: 'Literata', Georgia, serif;
-    background-color: var(--bg-solid) !important; /* Fuerza el fondo oscuro SIEMPRE */
+    background-color: transparent !important; /* Vital para ver la animación de fondo */
     color: var(--ink);
     line-height: 1.65;
     overflow-x: hidden;
 }
 
-/* FIX: Clava la animación a la pantalla como un wallpaper */
+/* FIX: Clava la animación en el FONDO (-1) */
 canvas {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
-    z-index: 1 !important; /* Detrás del contenido */
+    z-index: -1 !important; /* Esto soluciona que tapara la pantalla */
     pointer-events: none !important;
 }
 
@@ -54,7 +54,6 @@ a:hover {
     color: var(--accent-hover);
 }
 
-/* NAVEGACIÓN (Z-index 10 para estar por encima de la animación) */
 .site-nav {
     display: flex;
     justify-content: space-between;
@@ -63,7 +62,7 @@ a:hover {
     margin: 0 auto;
     padding: 24px 24px 10px;
     position: relative;
-    z-index: 10; 
+    z-index: 10;
 }
 
 .site-nav .wordmark {
@@ -90,7 +89,6 @@ a:hover {
     color: var(--accent);
 }
 
-/* CONTENEDOR PRINCIPAL (Z-index 10) */
 .container {
     display: flex;
     max-width: 1100px;
@@ -102,7 +100,7 @@ a:hover {
     -webkit-backdrop-filter: blur(16px);
     overflow: hidden;
     position: relative;
-    z-index: 10; 
+    z-index: 10;
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
@@ -270,7 +268,6 @@ section > h2 {
     border-color: var(--accent-hover);
 }
 
-/* FOOTER (Z-index 10) */
 footer.contact-cta {
     border-top: 1px solid var(--rule);
     margin-top: 50px;
