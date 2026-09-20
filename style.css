@@ -19,7 +19,7 @@
 }
 
 html, body {
-    background-color: var(--bg-solid) !important; /* Base oscura siempre */
+    background-color: var(--bg-solid) !important; /* Siempre oscuro, mata la franja blanca */
 }
 
 body {
@@ -50,7 +50,7 @@ a:hover {
     margin: 0 auto;
     padding: 24px 24px 10px;
     position: relative;
-    z-index: 10;
+    z-index: 10; /* Siempre sobre la animación */
 }
 
 .site-nav .wordmark {
@@ -88,7 +88,7 @@ a:hover {
     -webkit-backdrop-filter: blur(16px);
     overflow: hidden;
     position: relative;
-    z-index: 10;
+    z-index: 10; /* Siempre sobre la animación */
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
