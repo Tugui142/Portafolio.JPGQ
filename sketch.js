@@ -2,15 +2,31 @@ let colores = ["#6366F1", "#EC4899", "#818CF8", "#F472B6", "#F8FAFC"];
 let circulos;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  let canvas = createCanvas(windowWidth, windowHeight);
+  
+  // OPCIÓN NUCLEAR: Forzamos el CSS directamente desde JS para evadir el caché
+  canvas.elt.style.position = 'fixed';
+  canvas.elt.style.top = '0';
+  canvas.elt.style.left = '0';
+  canvas.elt.style.width = '100vw';
+  canvas.elt.style.height = '100vh';
+  canvas.elt.style.zIndex = '-9999'; // Lo enviamos al fondo absoluto
+  canvas.elt.style.pointerEvents = 'none'; // Evita que bloquee los clics
+  
+  // Forzamos la transparencia del fondo de la página web
+  document.body.style.backgroundColor = "transparent";
+  document.documentElement.style.backgroundColor = "transparent";
+
   circulos = [];
   for (let i = 0; i < 40; i++) {
     circulos.push(new Circulo());
   }
+  
   frameRate(60); 
 }
 
 function draw() {
+  // El color Azabache Profundo se pinta aquí, en el canvas del fondo
   background('#0F172A'); 
   circulos.forEach(c => {
     c.dibujar();
